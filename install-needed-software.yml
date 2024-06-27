@@ -1,0 +1,14 @@
+---
+- hosts: servers
+
+
+  tasks:
+
+    - name: "Install needed software for robertdebock/ansible-role-gitlab_runner role"
+      pip:
+        requirements: ./roles/robertdebock.gitlab_runner/requirements.txt
+
+    - name: "Install GitLab-runner"
+      include_role:
+        name: robertdebock.gitlab_runner
+          
