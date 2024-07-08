@@ -2,8 +2,10 @@
 - hosts: servers
 
 
+# передаем в переменную "my-tag" значение переменной "$CI_COMMIT_SHORT_SHA" через extra-vars
+
   vars:
-    docker_image: h4ck3r1121/skillbox-app:latest
+    docker_image: h4ck3r1121/skillbox-app:{{ my_tag }}
 
 
   tasks:
